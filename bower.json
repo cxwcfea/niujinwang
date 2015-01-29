@@ -1,0 +1,24 @@
+{
+  "name": "niujinwang",
+  "version": "0.0.1",
+  "authors": [
+    "cxwcfea@163.com"
+  ],
+  "description": "niujinwang",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.11",
+    "angular-route": "~1.3.11",
+    "angular-resource": "~1.3.11",
+    "angular-cookies": "~1.3.11"
+  }
+}

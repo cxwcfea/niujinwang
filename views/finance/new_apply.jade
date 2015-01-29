@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+    .center-form(ng-controller="applyNewController as main")
+        .panel.col-md-6
+            .panel-body
+                h4.text-center <i class="ion-arrow-graph-up-right"></i> 股票配资
+                form.form-horizontal(ng-submit='main.addNewApply()', name='applyForm')
+                    .form-group.has-feedback(ng-class="{ 'has-error' : applyForm.amount.$invalid && applyForm.amount.$dirty }")
+                        label.col-md-3.input-lg.control-label(for='amount') 配资金额:
+                        .input-group.col-md-9
+                            input.form-control.input-lg(type='number', id='amount', name='amount', ng-model='main.apply.amount', ng-blur="main.calculate()", step="1000", min="10000", max="200000", value="10000" placeholder='10000', required)
+                            .input-group-addon 元
+                    .form-group.has-feedback(ng-class="{ 'has-error' : applyForm.cycle.$invalid && applyForm.cycle.$dirty }")
+                        label.col-md-3.input-lg.control-label(for='cycle') 配资周期:
+                        .input-group.col-md-9
+                            input.form-control.input-lg(type='number', name='cycle', ng-model='main.apply.cycle', min="1", max="12", value="1" placeholder='1', required)
+                            .input-group-addon 月
+                    .form-group.has-feedback(ng-class="{ 'has-error' : applyForm.lever.$invalid && applyForm.lever.$dirty }")
+                        label.col-md-3.input-lg.control-label(for='lever') 配资比例:
+                        .input-group.col-md-9
+                            input.form-control.input-lg(type='number', name='lever', ng-model='main.apply.lever', ng-blur="main.calculate()", min="1", max="5", value="5", placeholder='5', required)
+                            .input-group-addon 倍
+                    button.btn.btn-block.btn-primary(type='submit', ng-disabled="applyForm.$invalid")
+                        span.ion-cash
+                        | 立即申请配资
+        .panel.col-md-6
+            .w6-int.well.well-sm
+                table.table
+                    tbody
+                        tr
+                            td 配资月利息：
+                        tr
+                            td
+                                strong#withInterest {{main.apply.interest}}分
+                        tr
+                            td 配资保证金：
+                        tr
+                            td
+                                i#withDeposit {{main.apply.deposit}}元
+

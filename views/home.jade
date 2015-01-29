@@ -1,0 +1,50 @@
+extends layout
+
+block slider
+    .carousel.slide(id='carousel-example-generic', data-ride='carousel')
+        ol.carousel-indicators
+            li.active(data-target='#carousel-example-generic' data-slide-to='0')
+            li(data-target='#carousel-example-generic' data-slide-to='1')
+            li(data-target='#carousel-example-generic' data-slide-to='2')
+
+        .carousel-inner(role='listbox')
+            .item.active
+                img(src='/images/ad_image_1.png',alt='ad1')
+            .item
+                img(src='/images/ad_image_2.png',alt='ad2')
+            .item
+                img(src='/images/ad_image_3.jpg',alt='ad3')
+
+        a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+            span.fa.fa-chevron-left(aria-hidden='true')
+            span.sr-only Previous
+
+        a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+            span.fa.fa-chevron-right(aria-hidden='true')
+            span.sr-only Next
+
+block content
+  hr
+  .row
+    .col-sm-3
+      h2 Heading
+      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      p
+        a.btn.btn-default(href='#', role='button') View details »
+    .col-sm-3
+      h2 Heading
+      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      p
+        a.btn.btn-default(href='#', role='button') View details »
+    .col-sm-3
+      h2 Heading
+      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      p
+        a.btn.btn-default(href='#', role='button') View details »
+    .col-sm-3
+      h2 Heading
+      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      p
+        a.btn.btn-default(href='#', role='button') View details »
+  hr
+  p.lead.text-center 已有 <strong class='emphasis-text'>#{num_investor}</strong> 位投资者，在牛金网投资 <strong class='emphasis-text'>#{invest_amount}</strong> 元
